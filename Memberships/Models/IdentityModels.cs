@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Memberships.Entities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -29,5 +30,12 @@ namespace Memberships.Models
         {
             return new ApplicationDbContext();
         }
+        //kolekcje obiektów
+        public DbSet<Section> Sections { get; set; } //połaczenie klas z tabelami, Entity Framework będzie wiedział, którą tabele edytować i na podstawie czego
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<ItemType> ItemTypes { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductType> ProductTypes { get; set; }
     }
 }
