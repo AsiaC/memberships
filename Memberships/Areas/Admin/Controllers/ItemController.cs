@@ -40,7 +40,14 @@ namespace Memberships.Areas.Admin.Controllers
         // GET: Admin/Item/Create
         public ActionResult Create()
         {
-            return View();
+            var model = new Item //przekazuję dane do wyswietlenia z bazy
+            {
+                ItemTypes = db.ItemTypes.ToList(),
+                Parts = db.Parts.ToList(),
+                Sections = db.Sections.ToList()
+            };
+
+            return View(model);
         }
 
         // POST: Admin/Item/Create
