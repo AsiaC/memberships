@@ -1,0 +1,7 @@
+﻿@model Memberships.Areas.Admin.Models.SmallButtonModel
+
+<a type="button" class="btn @Model.ButtonType btn-sm"           @*btn=>przycisk, btn-primary=>niebieski przycisk,btn-sm=>mały przycisk *@
+   href="@Url.Action(Model.Action)@Model.ActionParameters">     @*gdzie ma nas zabrać po naciśnieciu*@
+    <span class="glyphicon glyphicon-@Model.Glyph"></span>                @*ikona lista na przycisku*@
+    <span class="sr-only">@Model.Text</span>                    @*tekst ale tylko dla wiadomosci przegladarki*@
+</a>

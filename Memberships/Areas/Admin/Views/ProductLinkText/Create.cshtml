@@ -1,0 +1,36 @@
+﻿@model Memberships.Entities.ProductLinkText
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>ProductLinkText</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>ItemType</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">      @*ta grupa to przycisk create*@
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />  @*btn-default bialy przycisk i szary po najechaniu*@
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+        @*@Html.ActionLink("Back to List", "Index")=>to wyświetlało tekst i link *@
+        @Html.Partial("_BackToListButtonPartial")
+    </div>
