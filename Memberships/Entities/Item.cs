@@ -22,10 +22,12 @@ namespace Memberships.Entities
         [MaxLength(1024)]
         public string Url { get; set; }
         [MaxLength(1024)]
+        [DisplayName("Image Url")] //bez ego było by widać ImageUrl
         public string ImageUrl { get; set; }
         [AllowHtml]
         public string HTML { get; set; }
         [DefaultValue(0)]
+        [DisplayName("Wait Days")]
         public int WaitDays { get; set; }
         public string HTMLShort {
         get { return HTML == null || HTML.Length < 50 ? HTML : HTML.Substring(0, 50); }

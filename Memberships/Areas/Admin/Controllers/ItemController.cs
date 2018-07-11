@@ -79,6 +79,11 @@ namespace Memberships.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+
+            item.ItemTypes = await db.ItemTypes.ToListAsync(); //czekam na wyniki z tabeli
+            item.Parts = await db.Parts.ToListAsync();
+            item.Sections = await db.Sections.ToListAsync();
+
             return View(item);
         }
 
